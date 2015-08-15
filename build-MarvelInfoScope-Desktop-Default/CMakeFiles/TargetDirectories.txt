@@ -1,0 +1,13 @@
+/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/CMakeFiles/check.dir
+/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/tests/gmock/CMakeFiles/gmock.dir
+/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/tests/gmock/CMakeFiles/gmock_main.dir
+/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/tests/gmock/gtest/CMakeFiles/gtest.dir
+/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/tests/gmock/gtest/CMakeFiles/gtest_main.dir
+/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/CMakeFiles/hidden_files.dir
+/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/tests/CMakeFiles/hidden_test_fixtures.dir
+/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/src/CMakeFiles/marvelinfoscope.egarcia_marvelinfoscope-settings.ini_1.dir
+/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/src/CMakeFiles/marvelinfoscope.egarcia_marvelinfoscope.ini_1.dir
+/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/po/CMakeFiles/marvelinfoscope.pot_1.dir
+/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/src/CMakeFiles/scope.dir
+/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/po/CMakeFiles/translations.dir
+/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/po/CMakeFiles/translations_1.dir

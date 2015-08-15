@@ -1,0 +1,630 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+   <FileVersion major="1" minor="6" />
+   <Project>
+      <Option title="marvelinfoscope" />
+      <Option makefile_is_custom="1" />
+      <Option compiler="gcc" />
+      <Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\..\usr\src\;CMake Files\..\..\..\..\..\..\usr\src\gmock\;CMake Files\..\..\..\..\..\..\usr\src\gtest\;CMake Files\..\..\..\..\..\..\usr\src\gtest\cmake\;CMake Files\..\..\..\..\..\..\usr\lib\;CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\;CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\;CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Core\;CMake Files\po\;CMake Files\src\;CMake Files\src\data\;CMake Files\tests\;CMake Files\tests\unit\;" />
+      <Build>
+      <Target title="all">
+         <Option working_dir="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/Makefile&quot;  VERBOSE=1 all" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="check">
+         <Option working_dir="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/Makefile&quot;  VERBOSE=1 check" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="edit_cache">
+         <Option working_dir="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/Makefile&quot;  VERBOSE=1 edit_cache" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="hidden_files">
+         <Option working_dir="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/Makefile&quot;  VERBOSE=1 hidden_files" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="install">
+         <Option working_dir="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/Makefile&quot;  VERBOSE=1 install" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="install/local">
+         <Option working_dir="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/Makefile&quot;  VERBOSE=1 install/local" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="install/strip">
+         <Option working_dir="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/Makefile&quot;  VERBOSE=1 install/strip" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="list_install_components">
+         <Option working_dir="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/Makefile&quot;  VERBOSE=1 list_install_components" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="rebuild_cache">
+         <Option working_dir="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/Makefile&quot;  VERBOSE=1 rebuild_cache" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="test">
+         <Option working_dir="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/Makefile&quot;  VERBOSE=1 test" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="marvelinfoscope.pot_1">
+         <Option working_dir="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/po" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/po/Makefile&quot;  VERBOSE=1 marvelinfoscope.pot_1" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/po/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/po/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/po/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="translations">
+         <Option working_dir="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/po" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/po/Makefile&quot;  VERBOSE=1 translations" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/po/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/po/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/po/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="translations_1">
+         <Option working_dir="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/po" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/po/Makefile&quot;  VERBOSE=1 translations_1" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/po/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/po/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/po/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="marvelinfoscope.egarcia_marvelinfoscope-settings.ini_1">
+         <Option working_dir="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/src" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/src/Makefile&quot;  VERBOSE=1 marvelinfoscope.egarcia_marvelinfoscope-settings.ini_1" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/src/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/src/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="marvelinfoscope.egarcia_marvelinfoscope.ini_1">
+         <Option working_dir="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/src" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/src/Makefile&quot;  VERBOSE=1 marvelinfoscope.egarcia_marvelinfoscope.ini_1" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/src/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/src/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="scope">
+         <Option output="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/src/libmarvelinfoscope.egarcia_marvelinfoscope.so" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/src" />
+         <Option object_output="./" />
+         <Option type="3" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DQT_CORE_LIB" />
+            <Add option="-DQT_NO_KEYWORDS" />
+            <Add option="-DPACKAGE_NAME=&quot;marvelinfoscope.egarcia&quot;" />
+            <Add option="-DSCOPE_NAME=&quot;marvelinfoscope.egarcia_marvelinfoscope&quot;" />
+            <Add option="-DGETTEXT_PACKAGE=&quot;marvelinfoscope&quot;" />
+            <Add option="-DQT_NO_DEBUG" />
+            <Add directory="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/MarvelInfoScope/src" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.9" />
+            <Add directory="/usr/include/c++/4.9/backward" />
+            <Add directory="/usr/include/unity-scopes-0" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/4.9" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5/QtCore" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.9/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.9/include-fixed" />
+            <Add directory="/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/src/Makefile&quot;  VERBOSE=1 scope" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/src/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/src/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="scope/fast">
+         <Option output="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/src/libmarvelinfoscope.egarcia_marvelinfoscope.so" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/src" />
+         <Option object_output="./" />
+         <Option type="3" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DQT_CORE_LIB" />
+            <Add option="-DQT_NO_KEYWORDS" />
+            <Add option="-DPACKAGE_NAME=&quot;marvelinfoscope.egarcia&quot;" />
+            <Add option="-DSCOPE_NAME=&quot;marvelinfoscope.egarcia_marvelinfoscope&quot;" />
+            <Add option="-DGETTEXT_PACKAGE=&quot;marvelinfoscope&quot;" />
+            <Add option="-DQT_NO_DEBUG" />
+            <Add directory="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/MarvelInfoScope/src" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.9" />
+            <Add directory="/usr/include/c++/4.9/backward" />
+            <Add directory="/usr/include/unity-scopes-0" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/4.9" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5/QtCore" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.9/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.9/include-fixed" />
+            <Add directory="/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/src/Makefile&quot;  VERBOSE=1 scope/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/src/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/src/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="hidden_test_fixtures">
+         <Option working_dir="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/tests" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/tests/Makefile&quot;  VERBOSE=1 hidden_test_fixtures" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/tests/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/tests/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="gmock">
+         <Option output="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/tests/gmock/libgmock.a" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/tests/gmock" />
+         <Option object_output="./" />
+         <Option type="2" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DQT_NO_KEYWORDS" />
+            <Add option="-DPACKAGE_NAME=&quot;marvelinfoscope.egarcia&quot;" />
+            <Add option="-DSCOPE_NAME=&quot;marvelinfoscope.egarcia_marvelinfoscope&quot;" />
+            <Add option="-DGETTEXT_PACKAGE=&quot;marvelinfoscope&quot;" />
+            <Add directory="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/MarvelInfoScope/src" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.9" />
+            <Add directory="/usr/include/c++/4.9/backward" />
+            <Add directory="/usr/include/unity-scopes-0" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/4.9" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5/QtCore" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.9/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.9/include-fixed" />
+            <Add directory="/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64" />
+            <Add directory="/usr/local/include" />
+            <Add directory="/usr/src/gmock" />
+            <Add directory="/usr/src/gmock/include" />
+            <Add directory="/usr/src/gtest" />
+            <Add directory="/usr/src/gtest/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/tests/gmock/Makefile&quot;  VERBOSE=1 gmock" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/tests/gmock/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/tests/gmock/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/tests/gmock/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="gmock/fast">
+         <Option output="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/tests/gmock/libgmock.a" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/tests/gmock" />
+         <Option object_output="./" />
+         <Option type="2" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DQT_NO_KEYWORDS" />
+            <Add option="-DPACKAGE_NAME=&quot;marvelinfoscope.egarcia&quot;" />
+            <Add option="-DSCOPE_NAME=&quot;marvelinfoscope.egarcia_marvelinfoscope&quot;" />
+            <Add option="-DGETTEXT_PACKAGE=&quot;marvelinfoscope&quot;" />
+            <Add directory="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/MarvelInfoScope/src" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.9" />
+            <Add directory="/usr/include/c++/4.9/backward" />
+            <Add directory="/usr/include/unity-scopes-0" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/4.9" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5/QtCore" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.9/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.9/include-fixed" />
+            <Add directory="/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64" />
+            <Add directory="/usr/local/include" />
+            <Add directory="/usr/src/gmock" />
+            <Add directory="/usr/src/gmock/include" />
+            <Add directory="/usr/src/gtest" />
+            <Add directory="/usr/src/gtest/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/tests/gmock/Makefile&quot;  VERBOSE=1 gmock/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/tests/gmock/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/tests/gmock/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/tests/gmock/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="gmock_main">
+         <Option output="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/tests/gmock/libgmock_main.a" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/tests/gmock" />
+         <Option object_output="./" />
+         <Option type="2" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DQT_NO_KEYWORDS" />
+            <Add option="-DPACKAGE_NAME=&quot;marvelinfoscope.egarcia&quot;" />
+            <Add option="-DSCOPE_NAME=&quot;marvelinfoscope.egarcia_marvelinfoscope&quot;" />
+            <Add option="-DGETTEXT_PACKAGE=&quot;marvelinfoscope&quot;" />
+            <Add directory="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/MarvelInfoScope/src" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.9" />
+            <Add directory="/usr/include/c++/4.9/backward" />
+            <Add directory="/usr/include/unity-scopes-0" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/4.9" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5/QtCore" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.9/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.9/include-fixed" />
+            <Add directory="/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64" />
+            <Add directory="/usr/local/include" />
+            <Add directory="/usr/src/gmock" />
+            <Add directory="/usr/src/gmock/include" />
+            <Add directory="/usr/src/gtest" />
+            <Add directory="/usr/src/gtest/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/tests/gmock/Makefile&quot;  VERBOSE=1 gmock_main" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/tests/gmock/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/tests/gmock/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/tests/gmock/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="gmock_main/fast">
+         <Option output="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/tests/gmock/libgmock_main.a" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/tests/gmock" />
+         <Option object_output="./" />
+         <Option type="2" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DQT_NO_KEYWORDS" />
+            <Add option="-DPACKAGE_NAME=&quot;marvelinfoscope.egarcia&quot;" />
+            <Add option="-DSCOPE_NAME=&quot;marvelinfoscope.egarcia_marvelinfoscope&quot;" />
+            <Add option="-DGETTEXT_PACKAGE=&quot;marvelinfoscope&quot;" />
+            <Add directory="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/MarvelInfoScope/src" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.9" />
+            <Add directory="/usr/include/c++/4.9/backward" />
+            <Add directory="/usr/include/unity-scopes-0" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/4.9" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5/QtCore" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.9/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.9/include-fixed" />
+            <Add directory="/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64" />
+            <Add directory="/usr/local/include" />
+            <Add directory="/usr/src/gmock" />
+            <Add directory="/usr/src/gmock/include" />
+            <Add directory="/usr/src/gtest" />
+            <Add directory="/usr/src/gtest/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/tests/gmock/Makefile&quot;  VERBOSE=1 gmock_main/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/tests/gmock/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/tests/gmock/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/tests/gmock/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="gtest">
+         <Option output="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/tests/gmock/gtest/libgtest.a" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/tests/gmock/gtest" />
+         <Option object_output="./" />
+         <Option type="2" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DQT_NO_KEYWORDS" />
+            <Add option="-DPACKAGE_NAME=&quot;marvelinfoscope.egarcia&quot;" />
+            <Add option="-DSCOPE_NAME=&quot;marvelinfoscope.egarcia_marvelinfoscope&quot;" />
+            <Add option="-DGETTEXT_PACKAGE=&quot;marvelinfoscope&quot;" />
+            <Add directory="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/MarvelInfoScope/src" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.9" />
+            <Add directory="/usr/include/c++/4.9/backward" />
+            <Add directory="/usr/include/unity-scopes-0" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/4.9" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5/QtCore" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.9/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.9/include-fixed" />
+            <Add directory="/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64" />
+            <Add directory="/usr/local/include" />
+            <Add directory="/usr/src/gtest" />
+            <Add directory="/usr/src/gtest/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/tests/gmock/gtest/Makefile&quot;  VERBOSE=1 gtest" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/tests/gmock/gtest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/tests/gmock/gtest/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/tests/gmock/gtest/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="gtest/fast">
+         <Option output="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/tests/gmock/gtest/libgtest.a" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/tests/gmock/gtest" />
+         <Option object_output="./" />
+         <Option type="2" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DQT_NO_KEYWORDS" />
+            <Add option="-DPACKAGE_NAME=&quot;marvelinfoscope.egarcia&quot;" />
+            <Add option="-DSCOPE_NAME=&quot;marvelinfoscope.egarcia_marvelinfoscope&quot;" />
+            <Add option="-DGETTEXT_PACKAGE=&quot;marvelinfoscope&quot;" />
+            <Add directory="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/MarvelInfoScope/src" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.9" />
+            <Add directory="/usr/include/c++/4.9/backward" />
+            <Add directory="/usr/include/unity-scopes-0" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/4.9" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5/QtCore" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.9/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.9/include-fixed" />
+            <Add directory="/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64" />
+            <Add directory="/usr/local/include" />
+            <Add directory="/usr/src/gtest" />
+            <Add directory="/usr/src/gtest/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/tests/gmock/gtest/Makefile&quot;  VERBOSE=1 gtest/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/tests/gmock/gtest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/tests/gmock/gtest/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/tests/gmock/gtest/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="gtest_main">
+         <Option output="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/tests/gmock/gtest/libgtest_main.a" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/tests/gmock/gtest" />
+         <Option object_output="./" />
+         <Option type="2" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DQT_NO_KEYWORDS" />
+            <Add option="-DPACKAGE_NAME=&quot;marvelinfoscope.egarcia&quot;" />
+            <Add option="-DSCOPE_NAME=&quot;marvelinfoscope.egarcia_marvelinfoscope&quot;" />
+            <Add option="-DGETTEXT_PACKAGE=&quot;marvelinfoscope&quot;" />
+            <Add directory="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/MarvelInfoScope/src" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.9" />
+            <Add directory="/usr/include/c++/4.9/backward" />
+            <Add directory="/usr/include/unity-scopes-0" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/4.9" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5/QtCore" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.9/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.9/include-fixed" />
+            <Add directory="/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64" />
+            <Add directory="/usr/local/include" />
+            <Add directory="/usr/src/gtest" />
+            <Add directory="/usr/src/gtest/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/tests/gmock/gtest/Makefile&quot;  VERBOSE=1 gtest_main" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/tests/gmock/gtest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/tests/gmock/gtest/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/tests/gmock/gtest/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="gtest_main/fast">
+         <Option output="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/tests/gmock/gtest/libgtest_main.a" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/tests/gmock/gtest" />
+         <Option object_output="./" />
+         <Option type="2" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DQT_NO_KEYWORDS" />
+            <Add option="-DPACKAGE_NAME=&quot;marvelinfoscope.egarcia&quot;" />
+            <Add option="-DSCOPE_NAME=&quot;marvelinfoscope.egarcia_marvelinfoscope&quot;" />
+            <Add option="-DGETTEXT_PACKAGE=&quot;marvelinfoscope&quot;" />
+            <Add directory="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/MarvelInfoScope/src" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.9" />
+            <Add directory="/usr/include/c++/4.9/backward" />
+            <Add directory="/usr/include/unity-scopes-0" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/4.9" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5" />
+            <Add directory="/usr/include/x86_64-linux-gnu/qt5/QtCore" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.9/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.9/include-fixed" />
+            <Add directory="/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64" />
+            <Add directory="/usr/local/include" />
+            <Add directory="/usr/src/gtest" />
+            <Add directory="/usr/src/gtest/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/tests/gmock/gtest/Makefile&quot;  VERBOSE=1 gtest_main/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/tests/gmock/gtest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/tests/gmock/gtest/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default/tests/gmock/gtest/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      </Build>
+      <Unit filename="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/MarvelInfoScope/src/client.cpp">
+      </Unit>
+      <Unit filename="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/MarvelInfoScope/src/preview.cpp">
+      </Unit>
+      <Unit filename="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/MarvelInfoScope/src/query.cpp">
+      </Unit>
+      <Unit filename="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/MarvelInfoScope/src/scope.cpp">
+      </Unit>
+      <Unit filename="/usr/src/gmock/src/gmock-all.cc">
+      </Unit>
+      <Unit filename="/usr/src/gmock/src/gmock_main.cc">
+      </Unit>
+      <Unit filename="/usr/src/gtest/src/gtest-all.cc">
+      </Unit>
+      <Unit filename="/usr/src/gtest/src/gtest_main.cc">
+      </Unit>
+      <Unit filename="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/MarvelInfoScope/manifest.json.in">
+      </Unit>
+      <Unit filename="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/MarvelInfoScope/marvelinfoscope.apparmor">
+      </Unit>
+      <Unit filename="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/MarvelInfoScope/po/POTFILES.in">
+      </Unit>
+      <Unit filename="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/MarvelInfoScope/po/marvelinfoscope.pot">
+      </Unit>
+      <Unit filename="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/MarvelInfoScope/src/client.h">
+      </Unit>
+      <Unit filename="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/MarvelInfoScope/src/data/marvelinfoscope-settings.ini.in">
+      </Unit>
+      <Unit filename="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/MarvelInfoScope/src/data/marvelinfoscope.ini.in">
+      </Unit>
+      <Unit filename="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/MarvelInfoScope/src/localization.h">
+      </Unit>
+      <Unit filename="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/MarvelInfoScope/src/preview.h">
+      </Unit>
+      <Unit filename="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/MarvelInfoScope/src/query.h">
+      </Unit>
+      <Unit filename="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/MarvelInfoScope/src/scope.h">
+      </Unit>
+      <Unit filename="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/MarvelInfoScope/tests/server/forecast/London,uk.json">
+      </Unit>
+      <Unit filename="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/MarvelInfoScope/tests/server/forecast/Manchester,uk.json">
+      </Unit>
+      <Unit filename="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/MarvelInfoScope/tests/server/server.py">
+      </Unit>
+      <Unit filename="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/MarvelInfoScope/tests/server/weather/London,uk.json">
+      </Unit>
+      <Unit filename="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/MarvelInfoScope/tests/server/weather/Manchester,uk.json">
+      </Unit>
+      <Unit filename="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/MarvelInfoScope/tests/unit/test-scope.py">
+      </Unit>
+      <Unit filename="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/MarvelInfoScope/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\" />
+      </Unit>
+      <Unit filename="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/MarvelInfoScope/manifest.json.in">
+          <Option virtualFolder="CMake Files\" />
+      </Unit>
+      <Unit filename="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/MarvelInfoScope/../../../../../../usr/src/gmock/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\src\gmock\" />
+      </Unit>
+      <Unit filename="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/MarvelInfoScope/../../../../../../usr/src/gmock/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\src\gmock\" />
+      </Unit>
+      <Unit filename="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/MarvelInfoScope/../../../../../../usr/src/gtest/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\src\gtest\" />
+      </Unit>
+      <Unit filename="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/MarvelInfoScope/../../../../../../usr/src/gtest/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\src\gtest\" />
+      </Unit>
+      <Unit filename="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/MarvelInfoScope/../../../../../../usr/src/gtest/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\src\gtest\" />
+      </Unit>
+      <Unit filename="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/MarvelInfoScope/../../../../../../usr/src/gtest/cmake/internal_utils.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\src\gtest\cmake\" />
+      </Unit>
+      <Unit filename="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/MarvelInfoScope/../../../../../../usr/src/gtest/cmake/internal_utils.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\src\gtest\cmake\" />
+      </Unit>
+      <Unit filename="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/MarvelInfoScope/../../../../../../usr/src/gtest/cmake/internal_utils.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\src\gtest\cmake\" />
+      </Unit>
+      <Unit filename="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/MarvelInfoScope/../../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigVersion.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Core\" />
+      </Unit>
+      <Unit filename="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/MarvelInfoScope/../../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Core\" />
+      </Unit>
+      <Unit filename="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/MarvelInfoScope/../../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigExtras.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Core\" />
+      </Unit>
+      <Unit filename="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/MarvelInfoScope/../../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Core\" />
+      </Unit>
+      <Unit filename="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/MarvelInfoScope/../../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreMacros.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Core\" />
+      </Unit>
+      <Unit filename="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/MarvelInfoScope/po/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\po\" />
+      </Unit>
+      <Unit filename="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/MarvelInfoScope/src/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\src\" />
+      </Unit>
+      <Unit filename="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/MarvelInfoScope/src/data/logo.png">
+          <Option virtualFolder="CMake Files\src\data\" />
+      </Unit>
+      <Unit filename="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/MarvelInfoScope/tests/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\tests\" />
+      </Unit>
+      <Unit filename="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/MarvelInfoScope/tests/unit/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\tests\unit\" />
+      </Unit>
+   </Project>
+</CodeBlocks_project_file>
