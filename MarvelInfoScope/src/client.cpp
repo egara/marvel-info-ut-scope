@@ -57,59 +57,20 @@ void Client::get(const net::Uri::Path &path,
     }
 }
 
-Client::Current Client::weather(const string& query) {
-    // This is the method that we will call from the Query class.
-    // It connects to an HTTP source and returns the results.
-
-
-    // In this case we are going to retrieve JSON data.
-    QJsonDocument root;
-
-    // Build a URI and get the contents.
-    // The fist parameter forms the path part of the URI.
-    // The second parameter forms the CGI parameters.
-    get(
-    { "data", "2.5", "weather" },
-    { { "q", query }, { "units", "metric" }
-                },
-                root);
-    // e.g. http://api.openweathermap.org/data/2.5/weather?q=QUERY&units=metric
-
-    Current result;
-
-    // Read out the city we found
-    QVariantMap variant = root.toVariant().toMap();
-    QVariantMap sys = variant["sys"].toMap();
-    result.city.id = sys["id"].toUInt();
-    result.city.name = variant["name"].toString().toStdString();
-    result.city.country = sys["country"].toString().toStdString();
-
-    // Read the weather
-    QVariantMap weather = variant["weather"].toList().first().toMap();
-    result.weather.id = weather["id"].toUInt();
-    result.weather.main = weather["main"].toString().toStdString();
-    result.weather.description = weather["description"].toString().toStdString();
-    result.weather.icon = "http://openweathermap.org/img/w/"
-            + weather["icon"].toString().toStdString() + ".png";
-
-    // Read the temps
-    QVariantMap main = variant["main"].toMap();
-    result.weather.temp.cur = main["temp"].toDouble();
-    result.weather.temp.max = main["temp_max"].toDouble();
-    result.weather.temp.min = main["temp_min"].toDouble();
-    return result;
-}
-
-Client::Forecast Client::forecast_daily(const string& query, unsigned int cnt) {
+Client::Characters Client::query_characters(const string& query) {
     QJsonDocument root;
 
     // Build a URI and get the contents
     // The fist parameter forms the path part of the URI.
     // The second parameter forms the CGI parameters.
-    get( { "data", "2.5", "forecast", "daily" }, { { "q", query }, { "units",
-                                                                     "metric" }, { "cnt", to_string(cnt) }
-         }, root);
+   // get( { "data", "2.5", "forecast", "daily" }, { { "q", query }, { "units",
+   //                                                                  "metric" }, { "cnt", to_string(cnt) }
+   //      }, root);
+
+    //get( { "search", query }, {{ "filter", "guide,teardown" }, {"limit", "100"}}, root);
+    get( { "characters" }, { { "name", query }, { "apikey", "86f0789992b18c005b29de44ff92005c" } }, root);
     // e.g. http://api.openweathermap.org/data/2.5/forecast/daily/?q=QUERY&units=metric&cnt=7
+    // e.g. http://gateway.marvel.com/v1/public/characters?name=Hulk&apikey=86f0789992b18c005b29de44ff92005c
 
     Forecast result;
 

@@ -25,61 +25,43 @@ public:
     struct Config {
         typedef std::shared_ptr<Config> Ptr;
 
+        // API version
+        std::string apiversion { "/v1" };
+
+        // API scope
+        std::string apiscope { "/pubic" };
+
         // The root of all API request URLs
-        std::string apiroot { "http://api.openweathermap.org" };
+        std::string apiroot { "http://gateway.marvel.com" };
+
+        // Forming full API URL
+        strcat(apiroot, apiversion);
+        strcat(apiroot, apiscope);
 
         // The custom HTTP user agent string for this library
         std::string user_agent { "example-network-scope 0.1; (foo)" };
     };
 
     /**
-     * Information about a City
+     * Marvel's character information.
      */
-    struct City {
+    struct Character {
         unsigned int id;
         std::string name;
-        std::string country;
-    };
-
-    /**
-     * Temperature information for a day.
-     */
-    struct Temp {
-        double max;
-        double min;
-        double cur;
-    };
-
-    /**
-     * Weather information for a day.
-     */
-    struct Weather {
-        unsigned int id;
-        std::string main;
         std::string description;
-        std::string icon;
-        Temp temp;
+        std::string thumbnail;
     };
 
     /**
-     * A list of weather information
+     * A list of characters information
      */
-    typedef std::deque<Weather> WeatherList;
+    typedef std::deque<Character> CharacterList;
 
     /**
-     * Weather information about the current day
+     * Information about all Marvel's characters
      */
-    struct Current {
-        City city;
-        Weather weather;
-    };
-
-    /**
-     * Forecast information about a city
-     */
-    struct Forecast {
-        City city;
-        WeatherList weather;
+    struct Characters {
+        CharacterList character;
     };
 
     Client(Config::Ptr config);
@@ -87,14 +69,9 @@ public:
     virtual ~Client() = default;
 
     /**
-     * Get the current weather for the specified location
+     * Get all the Marvel's characters
      */
-    virtual Current weather(const std::string &query);
-
-    /**
-     * Get the weather forecast for the specified location and duration
-     */
-    virtual Forecast forecast_daily(const std::string &query, unsigned int days = 7);
+    virtual Characters query_characters(const std::string &query);
 
     /**
      * Cancel any pending queries (this method can be called from a different thread)
