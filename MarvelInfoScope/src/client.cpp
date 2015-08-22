@@ -57,50 +57,51 @@ void Client::get(const net::Uri::Path &path,
     }
 }
 
-Client::Characters Client::query_characters(const string& query) {
+Client::Characters Client::query_characters(const string& query, bool allCharacters) {
     QJsonDocument root;
 
     // Build a URI and get the contents
     // The fist parameter forms the path part of the URI.
     // The second parameter forms the CGI parameters.
-   // get( { "data", "2.5", "forecast", "daily" }, { { "q", query }, { "units",
-   //                                                                  "metric" }, { "cnt", to_string(cnt) }
-   //      }, root);
+    if (allCharacters) {
+        get( { "characters" }, { { "apikey", "86f0789992b18c005b29de44ff92005c" } }, root);
+        // e.g. http://gateway.marvel.com/v1/public/characters?apikey=86f0789992b18c005b29de44ff92005c
+    } else {
+        get( { "characters" }, { { "name", query }, { "apikey", "86f0789992b18c005b29de44ff92005c" } }, root);
+        // e.g. http://gateway.marvel.com/v1/public/characters?name=Hulk&apikey=86f0789992b18c005b29de44ff92005c
+    }
 
-    //get( { "search", query }, {{ "filter", "guide,teardown" }, {"limit", "100"}}, root);
-    get( { "characters" }, { { "name", query }, { "apikey", "86f0789992b18c005b29de44ff92005c" } }, root);
-    // e.g. http://api.openweathermap.org/data/2.5/forecast/daily/?q=QUERY&units=metric&cnt=7
-    // e.g. http://gateway.marvel.com/v1/public/characters?name=Hulk&apikey=86f0789992b18c005b29de44ff92005c
-
-    Forecast result;
+    Characters result;
 
     QVariantMap variant = root.toVariant().toMap();
 
-    // Read out the city we found
-    QVariantMap city = variant["city"].toMap();
-    result.city.id = city["id"].toUInt();
-    result.city.name = city["name"].toString().toStdString();
-    result.city.country = city["country"].toString().toStdString();
-
     // Iterate through the weather data
-    for (const QVariant &i : variant["list"].toList()) {
+    for (const QVariant &i : variant["results"].toList()) {
+        // Item result (Character from JSON response)
         QVariantMap item = i.toMap();
 
-        // Extract the first weather item
-        QVariantList weather_list = item["weather"].toList();
-        QVariantMap weather = weather_list.first().toMap();
+        // Map of images from item. There will be only one
+        QVariantMap images = item["thumbnail"].toMap();
 
-        // Extract the temperature data
-        QVariantMap temp = item["temp"].toMap();
+        // Complete URL for a thumbnail
+        //std::string completeURLThumbnail = images["path"].toString().toStdString() + "." + images["extension"].toString().toStdString();
 
-        // Add a result to the weather list
-        result.weather.emplace_back(
-                    Weather { weather["id"].toUInt(), weather["main"].toString().toStdString(),
-                              weather["description"].toString().toStdString(),
-                              "http://openweathermap.org/img/w/"
-                              + weather["icon"].toString().toStdString() + ".png", Temp {
-                                  temp["max"].toDouble(), temp["min"].toDouble(),
-                                  0.0 } });
+        //std::string completeURLThumbnail = { "http://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784.jpg" };
+        // Final URL
+        std::string finalURL = "http://www.estoes.es";
+
+        // Add a result to the character list
+        result.character.emplace_back(
+                    Character {
+                            item["id"].toString().toStdString(),
+                            item["name"].toString().toStdString(),
+                            item["desciption"].toString().toStdString(),
+                            images["path"].toString().toStdString() + "." + images["extension"].toString().toStdString(),
+                            //images["path"].toString().toStdString() + "." + images["extension"].toString().toStdString()
+                            finalURL
+                    });
+
+
     }
 
     return result;

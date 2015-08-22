@@ -1,6 +1,6 @@
 {
     "architecture": "amd64",
-    "description": "A simple Unity scope that accesses the network",
+    "description": "A simple Unity scope that accesses Marvel API",
     "framework": "ubuntu-sdk-15.04",
     "hooks": {
         "marvelinfoscope": {

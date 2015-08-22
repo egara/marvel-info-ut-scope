@@ -25,18 +25,8 @@ public:
     struct Config {
         typedef std::shared_ptr<Config> Ptr;
 
-        // API version
-        std::string apiversion { "/v1" };
-
-        // API scope
-        std::string apiscope { "/pubic" };
-
         // The root of all API request URLs
-        std::string apiroot { "http://gateway.marvel.com" };
-
-        // Forming full API URL
-        strcat(apiroot, apiversion);
-        strcat(apiroot, apiscope);
+        std::string apiroot { "http://gateway.marvel.com/v1/public" };
 
         // The custom HTTP user agent string for this library
         std::string user_agent { "example-network-scope 0.1; (foo)" };
@@ -46,10 +36,11 @@ public:
      * Marvel's character information.
      */
     struct Character {
-        unsigned int id;
+        std::string id;
         std::string name;
         std::string description;
         std::string thumbnail;
+        std::string url;
     };
 
     /**
@@ -71,7 +62,7 @@ public:
     /**
      * Get all the Marvel's characters
      */
-    virtual Characters query_characters(const std::string &query);
+    virtual Characters query_characters(const std::string &query, bool allCharacters);
 
     /**
      * Cancel any pending queries (this method can be called from a different thread)
