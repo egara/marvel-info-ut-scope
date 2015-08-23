@@ -19,6 +19,12 @@ core/net/http/response.h
 -
 QVariantMap
 -
+md5.h
+-
+ctime
+-
+iostream
+-
 
 /home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/MarvelInfoScope/src/client.h
 atomic
@@ -36,6 +42,12 @@ core/net/http/request.h
 core/net/uri.h
 -
 QJsonDocument
+-
+
+/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/MarvelInfoScope/src/md5.h
+cstring
+-
+iostream
 -
 
 /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonDocument

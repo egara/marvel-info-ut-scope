@@ -219,6 +219,30 @@ client.cpp.s:
 	cd /home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default && $(MAKE) -f src/CMakeFiles/scope.dir/build.make src/CMakeFiles/scope.dir/client.cpp.s
 .PHONY : client.cpp.s
 
+md5.o: md5.cpp.o
+.PHONY : md5.o
+
+# target to build an object file
+md5.cpp.o:
+	cd /home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default && $(MAKE) -f src/CMakeFiles/scope.dir/build.make src/CMakeFiles/scope.dir/md5.cpp.o
+.PHONY : md5.cpp.o
+
+md5.i: md5.cpp.i
+.PHONY : md5.i
+
+# target to preprocess a source file
+md5.cpp.i:
+	cd /home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default && $(MAKE) -f src/CMakeFiles/scope.dir/build.make src/CMakeFiles/scope.dir/md5.cpp.i
+.PHONY : md5.cpp.i
+
+md5.s: md5.cpp.s
+.PHONY : md5.s
+
+# target to generate assembly for a file
+md5.cpp.s:
+	cd /home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/build-MarvelInfoScope-Desktop-Default && $(MAKE) -f src/CMakeFiles/scope.dir/build.make src/CMakeFiles/scope.dir/md5.cpp.s
+.PHONY : md5.cpp.s
+
 preview.o: preview.cpp.o
 .PHONY : preview.o
 
@@ -310,6 +334,9 @@ help:
 	@echo "... client.o"
 	@echo "... client.i"
 	@echo "... client.s"
+	@echo "... md5.o"
+	@echo "... md5.i"
+	@echo "... md5.s"
 	@echo "... preview.o"
 	@echo "... preview.i"
 	@echo "... preview.s"

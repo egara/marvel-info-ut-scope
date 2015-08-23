@@ -5,6 +5,9 @@
 #include <core/net/http/content_type.h>
 #include <core/net/http/response.h>
 #include <QVariantMap>
+#include <md5.h>
+#include <ctime>
+#include <iostream>
 
 namespace http = core::net::http;
 namespace net = core::net;
@@ -60,23 +63,29 @@ void Client::get(const net::Uri::Path &path,
 Client::Characters Client::query_characters(const string& query, bool allCharacters) {
     QJsonDocument root;
 
+    // Calculating all the parameters needed in order to Marvel's API works properly
+    // It is needed a timestamp and a md5 hash with timestamp + privateKey + publicKey
+    std::time_t t = std::time(0);  // t is an integer type
+    std::string timestamp = std::to_string(t);
+    std::string hash = md5(timestamp + "f5f8a46693439befcd381a23bb73f983f80c44fb86f0789992b18c005b29de44ff92005c");
     // Build a URI and get the contents
     // The fist parameter forms the path part of the URI.
     // The second parameter forms the CGI parameters.
     if (allCharacters) {
-        get( { "characters" }, { { "apikey", "86f0789992b18c005b29de44ff92005c" } }, root);
+        get( { "characters" }, { { "ts", timestamp }, { "apikey", "86f0789992b18c005b29de44ff92005c" }, { "hash", hash } }, root);
         // e.g. http://gateway.marvel.com/v1/public/characters?apikey=86f0789992b18c005b29de44ff92005c
     } else {
-        get( { "characters" }, { { "name", query }, { "apikey", "86f0789992b18c005b29de44ff92005c" } }, root);
+        get( { "characters" }, { { "name", query }, { "ts", timestamp }, { "apikey", "86f0789992b18c005b29de44ff92005c" }, { "hash", hash } }, root);
         // e.g. http://gateway.marvel.com/v1/public/characters?name=Hulk&apikey=86f0789992b18c005b29de44ff92005c
     }
 
     Characters result;
 
     QVariantMap variant = root.toVariant().toMap();
+    QVariantMap variantResults = variant["data"].toMap();
 
-    // Iterate through the weather data
-    for (const QVariant &i : variant["results"].toList()) {
+    // Iterate through the characters data
+    for (const QVariant &i : variantResults["results"].toList()) {
         // Item result (Character from JSON response)
         QVariantMap item = i.toMap();
 
@@ -84,9 +93,8 @@ Client::Characters Client::query_characters(const string& query, bool allCharact
         QVariantMap images = item["thumbnail"].toMap();
 
         // Complete URL for a thumbnail
-        //std::string completeURLThumbnail = images["path"].toString().toStdString() + "." + images["extension"].toString().toStdString();
+        std::string completeURLThumbnail = images["path"].toString().toStdString() + "." + images["extension"].toString().toStdString();
 
-        //std::string completeURLThumbnail = { "http://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784.jpg" };
         // Final URL
         std::string finalURL = "http://www.estoes.es";
 
@@ -96,8 +104,7 @@ Client::Characters Client::query_characters(const string& query, bool allCharact
                             item["id"].toString().toStdString(),
                             item["name"].toString().toStdString(),
                             item["desciption"].toString().toStdString(),
-                            images["path"].toString().toStdString() + "." + images["extension"].toString().toStdString(),
-                            //images["path"].toString().toStdString() + "." + images["extension"].toString().toStdString()
+                            completeURLThumbnail,
                             finalURL
                     });
 

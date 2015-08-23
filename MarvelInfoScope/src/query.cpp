@@ -15,58 +15,6 @@ namespace sc = unity::scopes;
 
 using namespace std;
 
-
-/**
- * Define the larger "current weather" layout.
- *
- * The icons are larger.
- */
-/*
-const static string CURRENT_TEMPLATE =
-        R"(
-{
-        "schema-version": 1,
-        "template": {
-        "category-layout": "grid",
-        "card-size": "medium"
-        },
-        "components": {
-        "title": "title",
-        "art" : {
-        "field": "art"
-        },
-        "subtitle": "subtitle"
-        }
-        }
-        )";
-*/
-/**
- * Define the layout for the characters results.
- *
- * The icon size is small, and ask for the card layout
- * itself to be horizontal. I.e. the text will be placed
- * next to the image.
- */
-/*
-const static string WEATHER_TEMPLATE =
-        R"(
-{
-        "schema-version": 1,
-        "template": {
-        "category-layout": "grid",
-        "card-layout": "horizontal",
-        "card-size": "small"
-        },
-        "components": {
-        "title": "title",
-        "art" : {
-        "field": "art"
-        },
-        "subtitle": "subtitle"
-        }
-        }
-        )";
-*/
 /**
  * Define the layout for the characters results.
  *

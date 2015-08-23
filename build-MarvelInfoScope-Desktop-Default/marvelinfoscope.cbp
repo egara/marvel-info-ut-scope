@@ -518,6 +518,8 @@
       </Build>
       <Unit filename="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/MarvelInfoScope/src/client.cpp">
       </Unit>
+      <Unit filename="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/MarvelInfoScope/src/md5.cpp">
+      </Unit>
       <Unit filename="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/MarvelInfoScope/src/preview.cpp">
       </Unit>
       <Unit filename="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/MarvelInfoScope/src/query.cpp">
@@ -547,6 +549,8 @@
       <Unit filename="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/MarvelInfoScope/src/data/marvelinfoscope.ini.in">
       </Unit>
       <Unit filename="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/MarvelInfoScope/src/localization.h">
+      </Unit>
+      <Unit filename="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/MarvelInfoScope/src/md5.h">
       </Unit>
       <Unit filename="/home/egarcia/Development/UbuntuTouch/marvel-info-ut-scope/MarvelInfoScope/src/preview.h">
       </Unit>
