@@ -32,7 +32,9 @@ const static string CHARACTER_TEMPLATE =
         },
         "components": {
         "title": "title",
-        "mascot" : "mascot",
+        "art" : {
+        "field": "art"
+        },
         "subtitle": "subtitle"
         }
         }
@@ -79,10 +81,11 @@ void Query::run(sc::SearchReplyProxy const& reply) {
 
 
             // Set the rest of the attributes
-            res.set_title(character.name);
-            res["mascot"] = character.thumbnail;
-            res["subtitle"] = character.description;
-            //res["description"] = "A description of the result";
+            res["title"] = character.name;
+            res.set_art(character.thumbnail);
+            //res["mascot"] = character.thumbnail;
+            res["subtitle"] = character.id;
+            res["description"] = character.description;
 
             // Push the result
             if (!reply->push(res)) {

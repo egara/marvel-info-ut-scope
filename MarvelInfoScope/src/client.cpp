@@ -90,20 +90,20 @@ Client::Characters Client::query_characters(const string& query, bool allCharact
         QVariantMap item = i.toMap();
 
         // Map of images from item. There will be only one
-        QVariantMap images = item["thumbnail"].toMap();
+        QVariantMap image = item["thumbnail"].toMap();
 
         // Complete URL for a thumbnail
-        std::string completeURLThumbnail = images["path"].toString().toStdString() + "." + images["extension"].toString().toStdString();
+        std::string completeURLThumbnail = image["path"].toString().toStdString() + "." + image["extension"].toString().toStdString();
 
         // Final URL
-        std::string finalURL = "http://www.estoes.es";
+        std::string finalURL = "www.estoes.es";
 
         // Add a result to the character list
         result.character.emplace_back(
                     Character {
                             item["id"].toString().toStdString(),
                             item["name"].toString().toStdString(),
-                            item["desciption"].toString().toStdString(),
+                            item["description"].toString().toStdString(),
                             completeURLThumbnail,
                             finalURL
                     });
