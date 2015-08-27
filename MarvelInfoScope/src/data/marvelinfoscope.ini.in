@@ -1,8 +1,8 @@
 [ScopeConfig]
 _DisplayName=MarvelInfoScope Scope
-_Description=This is a MarvelInfoScope scope
+_Description=Get information about Marvel's Universe: characters, comics, series...
 Art=screenshot.png
-Author=Firstname Lastname
+Author=Eloy García Almadén
 Icon=icon.png
 Keywords=weather
 

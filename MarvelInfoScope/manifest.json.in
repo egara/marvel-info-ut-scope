@@ -1,6 +1,6 @@
 {
     "architecture": "@CLICK_ARCH@",
-    "description": "A simple Unity scope that accesses Marvel API",
+    "description": "Scope to get information about Marvel's Universe using Malrvel's API",
     "framework": "ubuntu-sdk-15.04",
     "hooks": {
         "marvelinfoscope": {
