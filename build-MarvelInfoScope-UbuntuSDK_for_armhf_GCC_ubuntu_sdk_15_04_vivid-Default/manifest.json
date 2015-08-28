@@ -1,0 +1,15 @@
+{
+    "architecture": "armhf",
+    "description": "Scope to get information about Marvel's Universe using Malrvel's API",
+    "framework": "ubuntu-sdk-15.04",
+    "hooks": {
+        "marvelinfoscope": {
+            "apparmor": "marvelinfoscope.apparmor",
+            "scope": "marvelinfoscope"
+        }
+    },
+    "maintainer": "Eloy Garcia Almaden <eloy.garcia.pca@gmail.com>",
+    "name": "marvelinfoscope.egarcia",
+    "title": "marvelinfoscope",
+    "version": "0.1"
+}
