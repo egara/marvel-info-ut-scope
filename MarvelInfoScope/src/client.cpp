@@ -75,8 +75,8 @@ Client::Characters Client::query_characters(const string& query, bool allCharact
         get( { "characters" }, { { "ts", timestamp }, { "apikey", "86f0789992b18c005b29de44ff92005c" }, { "hash", hash } }, root);
         // e.g. http://gateway.marvel.com/v1/public/characters?apikey=86f0789992b18c005b29de44ff92005c
     } else {
-        get( { "characters" }, { { "name", query }, { "ts", timestamp }, { "apikey", "86f0789992b18c005b29de44ff92005c" }, { "hash", hash } }, root);
-        // e.g. http://gateway.marvel.com/v1/public/characters?name=Hulk&apikey=86f0789992b18c005b29de44ff92005c
+        get( { "characters" }, { { "nameStartsWith", query }, { "ts", timestamp }, { "apikey", "86f0789992b18c005b29de44ff92005c" }, { "hash", hash } }, root);
+        // e.g. http://gateway.marvel.com/v1/public/characters?nameStartsWith=Hulk&apikey=86f0789992b18c005b29de44ff92005c
     }
 
     Characters result;
