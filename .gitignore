@@ -1,4 +1,7 @@
+# Ubuntu Touch ingnoring files and directories
 *.click
 *.so
 .bzr/
 
+# All the build directories are not useful because they are generated when the scope is compiled
+/build*
