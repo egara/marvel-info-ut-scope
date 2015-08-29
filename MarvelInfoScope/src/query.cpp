@@ -77,8 +77,8 @@ void Query::run(sc::SearchReplyProxy const& reply) {
             sc::CategorisedResult res(characters_cat);
 
             // We must have a URI
-            res.set_uri(character.url);
-
+            //res.set_uri(character.url);
+            res["uri"] = character.url;
 
             // Set the rest of the attributes
             res["title"] = character.name;

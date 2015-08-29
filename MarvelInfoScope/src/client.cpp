@@ -95,8 +95,19 @@ Client::Characters Client::query_characters(const string& query, bool allCharact
         // Complete URL for a thumbnail
         std::string completeURLThumbnail = image["path"].toString().toStdString() + "." + image["extension"].toString().toStdString();
 
+        // TODO: MIRAR ESTO BIEN!!!!!!!!
+        // Map of urls from item
+        QVariantMap urls = item["urls"].toMap();
+
+        for (const QVariant &urlVariant : urls) {
+
+            QVariantMap url = urlVariant.toMap();
+            std::string type = url["type"].toString().toStdString();
+            cout << type;
+        }
+
         // Final URL
-        std::string finalURL = "www.estoes.es";
+        std::string finalURL = "http://www.estoes.es";
 
         // Add a result to the character list
         result.character.emplace_back(

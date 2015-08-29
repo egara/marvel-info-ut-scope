@@ -20,6 +20,7 @@ void Preview::cancelled() {
 }
 
 void Preview::run(sc::PreviewReplyProxy const& reply) {
+    sc::Result result = PreviewQueryBase::result();
     // Support three different column layouts
     sc::ColumnLayout layout1col(1), layout2col(2), layout3col(3);
 
@@ -31,16 +32,16 @@ void Preview::run(sc::PreviewReplyProxy const& reply) {
     // However, we recommend that scopes define layouts for the best visual appearance.
 
     // Single column layout
-    layout1col.add_column( { "image_widget", "header_widget", "summary_widget" } );
+    layout1col.add_column( { "image_widget", "header_widget", "summary_widget", "actions_widget" } );
 
     // Two column layout
     layout2col.add_column( { "image_widget" } );
-    layout2col.add_column( { "header_widget", "summary_widget" } );
+    layout2col.add_column( { "header_widget", "summary_widget", "actions_widget" } );
 
     // Three cokumn layout
     layout3col.add_column( { "image_widget" });
     layout3col.add_column( { "header_widget", "summary_widget" } );
-    layout3col.add_column( { } );
+    layout3col.add_column( { "actions_widget" } );
 
     // Register the layouts we just created
     reply->register_layout( { layout1col, layout2col, layout3col } );
@@ -61,7 +62,20 @@ void Preview::run(sc::PreviewReplyProxy const& reply) {
     // It has a "text" property, mapped to the result's "description" property
     summary.add_attribute_mapping("text", "description");
 
+    // Define the actions section
+    sc::PreviewWidget actions("actions_widget", "actions");
+
+    // Actions are built using tuples with an id, a label and a URI
+    std::string uri = result["uri"].get_string();
+    sc::VariantBuilder builder;
+    builder.add_tuple({
+        {"id", sc::Variant("open")},
+        {"label", sc::Variant("Open")},
+        {"uri", sc::Variant(uri)}
+    });
+    actions.add_attribute_value("actions", builder.end());
+
     // Push each of the sections
-    reply->push( { image, header, summary } );
+    reply->push( { image, header, summary, actions } );
 }
 

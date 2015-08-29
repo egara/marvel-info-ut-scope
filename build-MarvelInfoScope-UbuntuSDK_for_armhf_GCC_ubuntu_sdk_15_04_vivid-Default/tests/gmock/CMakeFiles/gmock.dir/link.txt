@@ -1,2 +1,0 @@
-/usr/bin/arm-linux-gnueabihf-ar cr libgmock.a  CMakeFiles/gmock.dir/usr/src/gtest/src/gtest-all.cc.o CMakeFiles/gmock.dir/src/gmock-all.cc.o
-/usr/bin/arm-linux-gnueabihf-ranlib libgmock.a

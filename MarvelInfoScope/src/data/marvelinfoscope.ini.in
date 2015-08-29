@@ -14,3 +14,4 @@ PageHeader.ForegroundColor=#FFFFFF
 PageHeader.Background=gradient:///#6B0000/#EC0E17
 PageHeader.DividerColor=#6B0000
 BackgroundColor=#FFFFFA
+PreviewButtonColor=#EC0E17
