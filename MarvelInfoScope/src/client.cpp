@@ -82,10 +82,10 @@ Client::Characters Client::query_characters(const string& query, bool allCharact
     Characters result;
 
     QVariantMap variant = root.toVariant().toMap();
-    QVariantMap variantResults = variant["data"].toMap();
+    QVariantMap data = variant["data"].toMap();
 
     // Iterate through the characters data
-    for (const QVariant &i : variantResults["results"].toList()) {
+    for (const QVariant &i : data["results"].toList()) {
         // Item result (Character from JSON response)
         QVariantMap item = i.toMap();
 
@@ -95,19 +95,30 @@ Client::Characters Client::query_characters(const string& query, bool allCharact
         // Complete URL for a thumbnail
         std::string completeURLThumbnail = image["path"].toString().toStdString() + "." + image["extension"].toString().toStdString();
 
-        // TODO: MIRAR ESTO BIEN!!!!!!!!
-        // Map of urls from item
-        QVariantMap urls = item["urls"].toMap();
-
-        for (const QVariant &urlVariant : urls) {
+        // Important URLs
+        std::string detailUrl = "";
+        std::string wikiUrl = "";
+        std::string comicUrl = "";
+        for (const QVariant &urlVariant : item["urls"].toList()) {
 
             QVariantMap url = urlVariant.toMap();
             std::string type = url["type"].toString().toStdString();
-            cout << type;
-        }
 
-        // Final URL
-        std::string finalURL = "http://www.estoes.es";
+            // Detail URL
+            if (type == "detail") {
+                detailUrl = url["url"].toString().toStdString();
+            }
+
+            // Wiki URL
+            if (type == "wiki") {
+                wikiUrl = url["url"].toString().toStdString();
+            }
+
+            // Comiclink URL
+            if (type == "comiclink") {
+                comicUrl = url["url"].toString().toStdString();
+            }
+        }
 
         // Add a result to the character list
         result.character.emplace_back(
@@ -116,7 +127,9 @@ Client::Characters Client::query_characters(const string& query, bool allCharact
                             item["name"].toString().toStdString(),
                             item["description"].toString().toStdString(),
                             completeURLThumbnail,
-                            finalURL
+                            detailUrl,
+                            wikiUrl,
+                            comicUrl
                     });
 
 

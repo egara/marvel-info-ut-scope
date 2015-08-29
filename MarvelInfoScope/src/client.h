@@ -40,7 +40,9 @@ public:
         std::string name;
         std::string description;
         std::string thumbnail;
-        std::string url;
+        std::string detailUrl;
+        std::string wikiUrl;
+        std::string comicUrl;
     };
 
     /**

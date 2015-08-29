@@ -76,14 +76,15 @@ void Query::run(sc::SearchReplyProxy const& reply) {
             // Create a result
             sc::CategorisedResult res(characters_cat);
 
-            // We must have a URI
-            //res.set_uri(character.url);
-            res["uri"] = character.url;
+            // Set URLs
+            res.set_uri(character.detailUrl);
+            res["wiki"] = character.wikiUrl; // wiki must not be defined within CHARACTER_TEMPLATE
+                                             // but it will be available in preview.cpp
+            res["comiclink"] = character.comicUrl;
 
             // Set the rest of the attributes
             res["title"] = character.name;
             res.set_art(character.thumbnail);
-            //res["mascot"] = character.thumbnail;
             res["subtitle"] = character.id;
             res["description"] = character.description;
 

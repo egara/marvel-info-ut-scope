@@ -5,6 +5,7 @@
 #include <unity/scopes/PreviewReply.h>
 #include <unity/scopes/Result.h>
 #include <unity/scopes/VariantBuilder.h>
+#include <QVariantMap>
 
 #include <iostream>
 
@@ -21,6 +22,7 @@ void Preview::cancelled() {
 
 void Preview::run(sc::PreviewReplyProxy const& reply) {
     sc::Result result = PreviewQueryBase::result();
+
     // Support three different column layouts
     sc::ColumnLayout layout1col(1), layout2col(2), layout3col(3);
 
@@ -66,13 +68,37 @@ void Preview::run(sc::PreviewReplyProxy const& reply) {
     sc::PreviewWidget actions("actions_widget", "actions");
 
     // Actions are built using tuples with an id, a label and a URI
-    std::string uri = result["uri"].get_string();
     sc::VariantBuilder builder;
-    builder.add_tuple({
-        {"id", sc::Variant("open")},
-        {"label", sc::Variant("Open")},
-        {"uri", sc::Variant(uri)}
-    });
+
+    // Detail action
+    if (result["uri"].get_string() != "") {
+        builder.add_tuple({
+            {"id", sc::Variant("open")},
+            {"label", sc::Variant("Details")},
+            {"uri", sc::Variant(result["uri"].get_string())}
+        });
+    }
+
+    // Wiki action
+    if (result["wiki"].get_string() != "") {
+        builder.add_tuple({
+            {"id", sc::Variant("open")},
+            {"label", sc::Variant("Wiki")},
+            {"uri", sc::Variant(result["wiki"].get_string())}
+        });
+
+    }
+
+    // Comic link action
+    if (result["comiclink"].get_string() != "") {
+        builder.add_tuple({
+            {"id", sc::Variant("open")},
+            {"label", sc::Variant("Comics")},
+            {"uri", sc::Variant(result["comiclink"].get_string())}
+        });
+
+    }
+
     actions.add_attribute_value("actions", builder.end());
 
     // Push each of the sections
