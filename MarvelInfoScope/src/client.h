@@ -1,4 +1,4 @@
-#ifndef CLIENT_H_
+ #ifndef CLIENT_H_
 #define CLIENT_H_
 
 #include <atomic>
@@ -27,6 +27,15 @@ public:
 
         // The root of all API request URLs
         std::string apiroot { "http://gateway.marvel.com/v1/public" };
+
+        // Developer Key
+        std::string marvelApiKey {"86f0789992b18c005b29de44ff92005c"};
+
+        // Private Key
+        std::string privateKey {"f5f8a46693439befcd381a23bb73f983f80c44fb"};
+
+        // Public Key
+        std::string publicKey {"86f0789992b18c005b29de44ff92005c"};
 
         // The custom HTTP user agent string for this library
         std::string user_agent { "example-network-scope 0.1; (foo)" };

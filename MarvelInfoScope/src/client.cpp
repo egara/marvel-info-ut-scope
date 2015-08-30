@@ -67,16 +67,16 @@ Client::Characters Client::query_characters(const string& query, bool allCharact
     // It is needed a timestamp and a md5 hash with timestamp + privateKey + publicKey
     std::time_t t = std::time(0);  // t is an integer type
     std::string timestamp = std::to_string(t);
-    std::string hash = md5(timestamp + "f5f8a46693439befcd381a23bb73f983f80c44fb86f0789992b18c005b29de44ff92005c");
+    std::string hash = md5(timestamp + config_->privateKey + config_->publicKey);
     // Build a URI and get the contents
     // The fist parameter forms the path part of the URI.
     // The second parameter forms the CGI parameters.
     if (allCharacters) {
-        get( { "characters" }, { { "ts", timestamp }, { "apikey", "86f0789992b18c005b29de44ff92005c" }, { "hash", hash } }, root);
-        // e.g. http://gateway.marvel.com/v1/public/characters?apikey=86f0789992b18c005b29de44ff92005c
+        get( { "characters" }, { { "ts", timestamp }, { "apikey", config_->marvelApiKey }, { "hash", hash } }, root);
+        // e.g. http://gateway.marvel.com/v1/public/characters?ts=mytimestamp&apikey=mymarvelapikey&hash=myhash
     } else {
-        get( { "characters" }, { { "nameStartsWith", query }, { "ts", timestamp }, { "apikey", "86f0789992b18c005b29de44ff92005c" }, { "hash", hash } }, root);
-        // e.g. http://gateway.marvel.com/v1/public/characters?nameStartsWith=Hulk&apikey=86f0789992b18c005b29de44ff92005c
+        get( { "characters" }, { { "nameStartsWith", query }, { "ts", timestamp }, { "apikey", config_->marvelApiKey }, { "hash", hash } }, root);
+        // e.g. http://gateway.marvel.com/v1/public/characters?nameStartsWith=Hulk&ts=mytimestamp&apikey=mymarvelapikey&hash=myhash
     }
 
     Characters result;
