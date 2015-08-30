@@ -88,7 +88,11 @@ void Query::run(sc::SearchReplyProxy const& reply) {
             res["title"] = character.name;
             res.set_art(character.thumbnail);
             res["subtitle"] = "";
-            res["description"] = character.description;
+            if (character.description == "") {
+                res["description"] = "No description found.";
+            } else {
+                res["description"] = character.description;
+            }
             res["marvelAttribution"] = "Data provided by Marvel. © 2014 Marvel";   // Marvel attribution
 
             // Push the result
