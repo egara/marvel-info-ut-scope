@@ -28,7 +28,8 @@ const static string CHARACTER_TEMPLATE =
         "schema-version": 1,
         "template": {
         "category-layout": "grid",
-        "card-layout": "horizontal-list"
+        "card-layout": "horizontal-list",
+        "overlay": true
         },
         "components": {
         "title": "title",
