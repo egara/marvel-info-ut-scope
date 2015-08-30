@@ -60,7 +60,7 @@ void Client::get(const net::Uri::Path &path,
     }
 }
 
-Client::Characters Client::query_characters(const string& query, bool allCharacters) {
+Client::Characters Client::query_characters(const string& query, bool allCharacters, std::string const& order) {
     QJsonDocument root;
 
     // Calculating all the parameters needed in order to Marvel's API works properly
@@ -68,15 +68,25 @@ Client::Characters Client::query_characters(const string& query, bool allCharact
     std::time_t t = std::time(0);  // t is an integer type
     std::string timestamp = std::to_string(t);
     std::string hash = md5(timestamp + config_->privateKey + config_->publicKey);
+
+    int offset = 0;
     // Build a URI and get the contents
     // The fist parameter forms the path part of the URI.
     // The second parameter forms the CGI parameters.
     if (allCharacters) {
-        get( { "characters" }, { { "ts", timestamp }, { "apikey", config_->marvelApiKey }, { "hash", hash } }, root);
-        // e.g. http://gateway.marvel.com/v1/public/characters?ts=mytimestamp&apikey=mymarvelapikey&hash=myhash
+        // All characters
+        if (order == "random") {
+            // Generating a random integer between 0 and 100 [output = min + (rand() % (int)(max - min + 1))]
+            offset = 0 + (rand() % (int)(100 - 0 + 1));
+            get( { "characters" }, { { "ts", timestamp }, { "apikey", config_->marvelApiKey }, { "hash", hash }, { "offset", std::to_string(offset) }, { "limit", "20" } }, root);
+            // e.g. http://gateway.marvel.com/v1/public/characters?ts=mytimestamp&apikey=mymarvelapikey&hash=myhash&offset=myoffset&limit=20
+        } else {
+            get( { "characters" }, { { "ts", timestamp }, { "apikey", config_->marvelApiKey }, { "hash", hash }, { "orderBy", order }, { "limit", "20" } }, root);
+            // e.g. http://gateway.marvel.com/v1/public/characters?ts=mytimestamp&apikey=mymarvelapikey&hash=myhash&orderBy=myorder&limit=20
+        }
     } else {
-        get( { "characters" }, { { "nameStartsWith", query }, { "ts", timestamp }, { "apikey", config_->marvelApiKey }, { "hash", hash } }, root);
-        // e.g. http://gateway.marvel.com/v1/public/characters?nameStartsWith=Hulk&ts=mytimestamp&apikey=mymarvelapikey&hash=myhash
+        get( { "characters" }, { { "nameStartsWith", query }, { "ts", timestamp }, { "apikey", config_->marvelApiKey }, { "hash", hash }, { "limit", "20" } }, root);
+        // e.g. http://gateway.marvel.com/v1/public/characters?nameStartsWith=Hulk&ts=mytimestamp&apikey=mymarvelapikey&hash=myhash&limit=20
     }
 
     Characters result;

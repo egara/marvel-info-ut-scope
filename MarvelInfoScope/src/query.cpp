@@ -60,12 +60,31 @@ void Query::run(sc::SearchReplyProxy const& reply) {
         string query_string = query.query_string();
 
         Client::Characters characters;
+
+        auto order = settings().at("order").get_int();
+
+        std::string orderToken = "";
+        switch ( order ) {
+        case 0:
+          orderToken = "name";
+          break;
+        case 1:
+            orderToken = "modified";
+            break;
+        case 2:
+            orderToken = "random";
+            break;
+        default:
+            orderToken = "name";
+            break;
+        }
+
         if (query_string.empty()) {
             // If there is no search string, get all characters
-            characters = client_.query_characters("", true);
+            characters = client_.query_characters("", true, orderToken);
         } else {
             // otherwise, get the character for the search string
-            characters = client_.query_characters(query_string, false);
+            characters = client_.query_characters(query_string, false, orderToken);
         }
 
         // Register a category for characters

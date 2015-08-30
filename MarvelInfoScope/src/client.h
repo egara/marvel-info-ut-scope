@@ -73,7 +73,7 @@ public:
     /**
      * Get all the Marvel's characters
      */
-    virtual Characters query_characters(const std::string &query, bool allCharacters);
+    virtual Characters query_characters(const std::string &query, bool allCharacters, const std::string &order);
 
     /**
      * Cancel any pending queries (this method can be called from a different thread)
