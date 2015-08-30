@@ -1,6 +1,6 @@
 [ScopeConfig]
 _DisplayName=MarvelInfoScope Scope
-_Description=Get information about Marvel's Universe: characters, comics, series...
+_Description=Discover Marvel's Universe using this scope for Ubuntu Touch. It implements the official Marvel's API.
 Art=screenshot.png
 Author=Eloy García Almadén
 Icon=icon.png

@@ -1,6 +1,6 @@
 {
     "architecture": "@CLICK_ARCH@",
-    "description": "Scope to get information about Marvel's Universe using Malrvel's API",
+    "description": "Discover Marvel's Universe using this scope for Ubuntu Touch. It implements the official Marvel's API.",
     "framework": "ubuntu-sdk-15.04",
     "hooks": {
         "marvelinfoscope": {
@@ -11,5 +11,5 @@
     "maintainer": "Eloy Garcia Almaden <eloy.garcia.pca@gmail.com>",
     "name": "marvelinfoscope.egarcia",
     "title": "marvelinfoscope",
-    "version": "0.1"
+    "version": "1.0"
 }

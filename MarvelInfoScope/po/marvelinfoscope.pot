@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-30 09:17+0200\n"
+"POT-Creation-Date: 2015-08-30 09:47+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,7 +22,9 @@ msgid "MarvelInfoScope Scope"
 msgstr ""
 
 #: ../src/data/marvelinfoscope.ini.in.h:2
-msgid "Get information about Marvel's Universe: characters, comics, series..."
+msgid ""
+"Discover Marvel's Universe using this scope for Ubuntu Touch. It implements "
+"the official Marvel's API."
 msgstr ""
 
 #: ../src/data/marvelinfoscope-settings.ini.in.h:1
@@ -30,7 +32,7 @@ msgid "Show initial results order by"
 msgstr ""
 
 #: ../src/data/marvelinfoscope-settings.ini.in.h:2
-msgid "Name;Last modified;Randomly"
+msgid "Name;Last modified;Randomly (First result)"
 msgstr ""
 
 #. Register a category for characters
