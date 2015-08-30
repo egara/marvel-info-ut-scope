@@ -80,13 +80,15 @@ void Query::run(sc::SearchReplyProxy const& reply) {
             res.set_uri(character.detailUrl);
             res["wiki"] = character.wikiUrl; // wiki must not be defined within CHARACTER_TEMPLATE
                                              // but it will be available in preview.cpp
-            res["comiclink"] = character.comicUrl;
+            res["comiclink"] = character.comicUrl;  // comiclink must not be defined within CHARACTER_TEMPLATE
+                                                    // but it will be available in preview.cpp
 
             // Set the rest of the attributes
             res["title"] = character.name;
             res.set_art(character.thumbnail);
-            res["subtitle"] = character.id;
+            res["subtitle"] = "";
             res["description"] = character.description;
+            res["marvelAttribution"] = "Data provided by Marvel. © 2014 Marvel";   // Marvel attribution
 
             // Push the result
             if (!reply->push(res)) {

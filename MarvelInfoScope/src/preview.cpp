@@ -21,6 +21,7 @@ void Preview::cancelled() {
 }
 
 void Preview::run(sc::PreviewReplyProxy const& reply) {
+    // Result
     sc::Result result = PreviewQueryBase::result();
 
     // Support three different column layouts
@@ -57,7 +58,7 @@ void Preview::run(sc::PreviewReplyProxy const& reply) {
     sc::PreviewWidget header("header_widget", "header");
     // It has a "title" and a "subtitle" property
     header.add_attribute_mapping("title", "title");
-    header.add_attribute_mapping("subtitle", "subtitle");
+    header.add_attribute_mapping("subtitle", "marvelAttribution");
 
     // Define the summary section
     sc::PreviewWidget summary("summary_widget", "text");
