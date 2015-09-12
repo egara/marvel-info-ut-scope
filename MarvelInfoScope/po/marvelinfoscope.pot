@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-30 09:47+0200\n"
+"POT-Creation-Date: 2015-09-12 09:50+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -35,7 +35,25 @@ msgstr ""
 msgid "Name;Last modified;Randomly (First result)"
 msgstr ""
 
+#: ../src/data/marvelinfoscope-settings.ini.in.h:3
+msgid "Home page"
+msgstr ""
+
+#: ../src/data/marvelinfoscope-settings.ini.in.h:4
+msgid "Characters;Comics"
+msgstr ""
+
+#. Characters filter
+#: ../src/query.cpp:101
+msgid "Characters"
+msgstr ""
+
+#. Comics filter
+#: ../src/query.cpp:103
+msgid "Comics"
+msgstr ""
+
 #. Register a category for characters
-#: ../src/query.cpp:91
+#: ../src/query.cpp:169
 msgid "Marvel Characters"
 msgstr ""

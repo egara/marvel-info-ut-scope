@@ -4,3 +4,8 @@ _displayName = Show initial results order by
 _displayValues = Name;Last modified;Randomly (First result)
 defaultValue = 0
 
+[homepage]
+type = list
+_displayName = Home page
+_displayValues = Characters;Comics
+defaultValue = 0

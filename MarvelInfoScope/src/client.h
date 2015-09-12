@@ -55,6 +55,16 @@ public:
     };
 
     /**
+     * Marvel's comic information.
+     */
+    struct Comic {
+        std::string id;
+        std::string title;
+        std::string description;
+        std::string thumbnail;
+    };
+
+    /**
      * A list of characters information
      */
     typedef std::deque<Character> CharacterList;
