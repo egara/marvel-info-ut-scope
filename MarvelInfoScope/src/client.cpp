@@ -148,6 +148,94 @@ Client::Characters Client::query_characters(const string& query, bool allCharact
     return result;
 }
 
+Client::Comics Client::query_comics(const string& query, bool allComics, std::string const& order) {
+    QJsonDocument root;
+
+    // Calculating all the parameters needed in order to Marvel's API works properly
+    // It is needed a timestamp and a md5 hash with timestamp + privateKey + publicKey
+    std::time_t t = std::time(0);  // t is an integer type
+    std::string timestamp = std::to_string(t);
+    std::string hash = md5(timestamp + config_->privateKey + config_->publicKey);
+
+    int offset = 0;
+    // Build a URI and get the contents
+    // The fist parameter forms the path part of the URI.
+    // The second parameter forms the CGI parameters.
+    if (allComics) {
+        // All comics
+        if (order == "random") {
+            // Generating a random integer between 0 and 100 [output = min + (rand() % (int)(max - min + 1))]
+            offset = 0 + (rand() % (int)(100 - 0 + 1));
+            get( { "comics" }, { { "ts", timestamp }, { "apikey", config_->marvelApiKey }, { "hash", hash }, { "offset", std::to_string(offset) }, { "limit", "20" } }, root);
+            // e.g. http://gateway.marvel.com/v1/public/comics?ts=mytimestamp&apikey=mymarvelapikey&hash=myhash&offset=myoffset&limit=20
+        } else {
+            get( { "comics" }, { { "ts", timestamp }, { "apikey", config_->marvelApiKey }, { "hash", hash }, { "orderBy", order }, { "limit", "20" } }, root);
+            // e.g. http://gateway.marvel.com/v1/public/comics?ts=mytimestamp&apikey=mymarvelapikey&hash=myhash&orderBy=myorder&limit=20
+        }
+    } else {
+        get( { "comics" }, { { "titleStartsWith", query }, { "ts", timestamp }, { "apikey", config_->marvelApiKey }, { "hash", hash }, { "limit", "20" } }, root);
+        // e.g. http://gateway.marvel.com/v1/public/comics?titleStartsWith=Hulk&ts=mytimestamp&apikey=mymarvelapikey&hash=myhash&limit=20
+    }
+
+    Comics result;
+
+    QVariantMap variant = root.toVariant().toMap();
+    QVariantMap data = variant["data"].toMap();
+
+    // Iterate through the comics data
+    for (const QVariant &i : data["results"].toList()) {
+        // Item result (Character from JSON response)
+        QVariantMap item = i.toMap();
+
+        // Map of images from item. There will be only one
+        QVariantMap image = item["thumbnail"].toMap();
+
+        // Complete URL for a thumbnail
+        std::string completeURLThumbnail = image["path"].toString().toStdString() + "." + image["extension"].toString().toStdString();
+
+        // Important URLs
+        std::string detailUrl = "";
+        //std::string wikiUrl = "";
+        //std::string comicUrl = "";
+        for (const QVariant &urlVariant : item["urls"].toList()) {
+
+            QVariantMap url = urlVariant.toMap();
+            std::string type = url["type"].toString().toStdString();
+
+            // Detail URL
+            if (type == "detail") {
+                detailUrl = url["url"].toString().toStdString();
+            }
+
+            // Wiki URL
+            //if (type == "wiki") {
+            //    wikiUrl = url["url"].toString().toStdString();
+            //}
+
+            // Comiclink URL
+            //if (type == "comiclink") {
+            //    comicUrl = url["url"].toString().toStdString();
+            //}
+        }
+
+        // Add a result to the comic list
+        result.comic.emplace_back(
+                    Comic {
+                            item["id"].toString().toStdString(),
+                            item["title"].toString().toStdString(),
+                            item["description"].toString().toStdString(),
+                            completeURLThumbnail,
+                            detailUrl
+                            //wikiUrl,
+                            //comicUrl
+                    });
+
+
+    }
+
+    return result;
+}
+
 http::Request::Progress::Next Client::progress_report(
         const http::Request::Progress&) {
 

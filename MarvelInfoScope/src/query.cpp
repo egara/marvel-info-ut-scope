@@ -149,6 +149,7 @@ void Query::run(sc::SearchReplyProxy const& reply) {
 
 
         if (filterid == "characters") {
+            // Characters
             Client::Characters characters;
 
             if (query_string.empty()) {
@@ -192,8 +193,53 @@ void Query::run(sc::SearchReplyProxy const& reply) {
                     // So don't continue;
                     return;
                 }
-        }
+            }
+        } else if (filterid == "comics") {
+            // Comics
+            Client::Comics comics;
 
+            if (query_string.empty()) {
+                // If there is no search string, get all comics
+                comics = client_.query_comics("", true, orderToken);
+            } else {
+                // otherwise, get the character for the search string
+                comics = client_.query_comics(query_string, false, orderToken);
+            }
+
+            // Register a category for comics
+            auto comics_cat = reply->register_category("comics", _("Marvel Comics"), "",
+                                                         sc::CategoryRenderer(COMIC_TEMPLATE));
+
+            // For each of the comics
+            for (const auto &comic : comics.comic) {
+                // Create a result
+                sc::CategorisedResult res(comics_cat);
+
+                // Set URLs
+                res.set_uri(comic.detailUrl);
+                //res["wiki"] = comic.wikiUrl; // wiki must not be defined within CHARACTER_TEMPLATE
+                                                 // but it will be available in preview.cpp
+                //res["comiclink"] = comic.comicUrl;  // comiclink must not be defined within CHARACTER_TEMPLATE
+                                                        // but it will be available in preview.cpp
+
+                // Set the rest of the attributes
+                res["title"] = comic.title;
+                res.set_art(comic.thumbnail);
+                res["subtitle"] = "isbn: ";
+                if (comic.description == "") {
+                    res["description"] = "No description found.";
+                } else {
+                    res["description"] = comic.description;
+                }
+                res["marvelAttribution"] = "Data provided by Marvel. © 2014 Marvel";   // Marvel attribution
+
+                // Push the result
+                if (!reply->push(res)) {
+                    // If we fail to push, it means the query has been cancelled.
+                    // So don't continue;
+                    return;
+                }
+            }
         }
 
     } catch (domain_error &e) {

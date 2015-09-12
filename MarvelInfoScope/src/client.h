@@ -62,18 +62,31 @@ public:
         std::string title;
         std::string description;
         std::string thumbnail;
+        std::string detailUrl;
     };
 
     /**
-     * A list of characters information
+     * A list of characters
      */
     typedef std::deque<Character> CharacterList;
 
     /**
-     * Information about all Marvel's characters
+     * A list of comics
+     */
+    typedef std::deque<Comic> ComicList;
+
+    /**
+     * Information about Marvel's characters
      */
     struct Characters {
         CharacterList character;
+    };
+
+    /**
+     * Information about Marvel's comics
+     */
+    struct Comics {
+        ComicList comic;
     };
 
     Client(Config::Ptr config);
@@ -81,9 +94,14 @@ public:
     virtual ~Client() = default;
 
     /**
-     * Get all the Marvel's characters
+     * Get all Marvel's characters
      */
     virtual Characters query_characters(const std::string &query, bool allCharacters, const std::string &order);
+
+    /**
+     * Get all Marvel's comics
+     */
+    virtual Comics query_comics(const std::string &query, bool allComics, const std::string &order);
 
     /**
      * Cancel any pending queries (this method can be called from a different thread)
