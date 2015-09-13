@@ -54,9 +54,8 @@ const static string COMIC_TEMPLATE =
 {
         "schema-version": 1,
         "template": {
-        "category-layout": "carousel",
-        "card-layout": "horizontal",
-        "card-size": "large",
+        "category-layout": "vertical-journal",
+        "card-layout": "horizontal-list",
         "overlay": true
         },
         "components": {

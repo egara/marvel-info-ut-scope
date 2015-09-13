@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-13 09:21+0200\n"
+"POT-Creation-Date: 2015-09-13 09:28+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -44,21 +44,21 @@ msgid "Characters;Comics"
 msgstr ""
 
 #. Characters filter
-#: ../src/query.cpp:100
+#: ../src/query.cpp:99
 msgid "Characters"
 msgstr ""
 
 #. Comics filter
-#: ../src/query.cpp:102
+#: ../src/query.cpp:101
 msgid "Comics"
 msgstr ""
 
 #. Register a category for characters
-#: ../src/query.cpp:164
+#: ../src/query.cpp:163
 msgid "Marvel Characters"
 msgstr ""
 
 #. Register a category for comics
-#: ../src/query.cpp:211
+#: ../src/query.cpp:210
 msgid "Marvel Comics"
 msgstr ""
