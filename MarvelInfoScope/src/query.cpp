@@ -116,11 +116,11 @@ void Query::run(sc::SearchReplyProxy const& reply) {
             if (homepage == 0) {
                 // Characters
                 filterid = "characters";
-                clog << "Settings puestos a Chracters";
+
             } else if (homepage == 1) {
                 // Comics
                 filterid = "comics";
-                clog << "Settings puestos a Comics";
+
             }
         }
 
@@ -186,6 +186,7 @@ void Query::run(sc::SearchReplyProxy const& reply) {
                     res["description"] = character.description;
                 }
                 res["marvelAttribution"] = "Data provided by Marvel. © 2014 Marvel";   // Marvel attribution
+                res["resultType"] = filterid;
 
                 // Push the result
                 if (!reply->push(res)) {
@@ -232,6 +233,7 @@ void Query::run(sc::SearchReplyProxy const& reply) {
                     res["description"] = comic.description;
                 }
                 res["marvelAttribution"] = "Data provided by Marvel. © 2014 Marvel";   // Marvel attribution
+                res["resultType"] = filterid;
 
                 // Push the result
                 if (!reply->push(res)) {

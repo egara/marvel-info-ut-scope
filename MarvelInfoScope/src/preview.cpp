@@ -24,6 +24,9 @@ void Preview::run(sc::PreviewReplyProxy const& reply) {
     // Result
     sc::Result result = PreviewQueryBase::result();
 
+    // Result Type
+    std::string resultType = result["resultType"].get_string();
+
     // Support three different column layouts
     sc::ColumnLayout layout1col(1), layout2col(2), layout3col(3);
 
@@ -41,7 +44,7 @@ void Preview::run(sc::PreviewReplyProxy const& reply) {
     layout2col.add_column( { "image_widget" } );
     layout2col.add_column( { "header_widget", "summary_widget", "actions_widget" } );
 
-    // Three cokumn layout
+    // Three column layout
     layout3col.add_column( { "image_widget" });
     layout3col.add_column( { "header_widget", "summary_widget" } );
     layout3col.add_column( { "actions_widget" } );
@@ -80,25 +83,28 @@ void Preview::run(sc::PreviewReplyProxy const& reply) {
         });
     }
 
-    // Wiki action
-    if (result["wiki"].get_string() != "") {
-        builder.add_tuple({
-            {"id", sc::Variant("open")},
-            {"label", sc::Variant("Wiki")},
-            {"uri", sc::Variant(result["wiki"].get_string())}
-        });
+    if (resultType == "characters") {
+        // Wiki action
+        if (result["wiki"].get_string() != "") {
+            builder.add_tuple({
+                {"id", sc::Variant("open")},
+                {"label", sc::Variant("Wiki")},
+                {"uri", sc::Variant(result["wiki"].get_string())}
+            });
 
+        }
+
+        // Comic link action
+        if (result["comiclink"].get_string() != "") {
+            builder.add_tuple({
+                {"id", sc::Variant("open")},
+                {"label", sc::Variant("Comics")},
+                {"uri", sc::Variant(result["comiclink"].get_string())}
+            });
+
+        }
     }
 
-    // Comic link action
-    if (result["comiclink"].get_string() != "") {
-        builder.add_tuple({
-            {"id", sc::Variant("open")},
-            {"label", sc::Variant("Comics")},
-            {"uri", sc::Variant(result["comiclink"].get_string())}
-        });
-
-    }
 
     actions.add_attribute_value("actions", builder.end());
 
