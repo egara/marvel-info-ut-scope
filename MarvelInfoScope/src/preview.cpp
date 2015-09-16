@@ -38,16 +38,31 @@ void Preview::run(sc::PreviewReplyProxy const& reply) {
     // However, we recommend that scopes define layouts for the best visual appearance.
 
     // Single column layout
-    layout1col.add_column( { "image_widget", "header_widget", "summary_widget", "actions_widget" } );
+    if (resultType == "comics") {
+        layout1col.add_column( { "image_widget", "header_widget", "summary_widget", "gallery_widget", "actions_widget" } );
+    } else if (resultType == "characters") {
+        layout1col.add_column( { "image_widget", "header_widget", "summary_widget", "actions_widget" } );
+    }
 
     // Two column layout
-    layout2col.add_column( { "image_widget" } );
-    layout2col.add_column( { "header_widget", "summary_widget", "actions_widget" } );
+    if (resultType == "comics") {
+        layout2col.add_column( { "image_widget" } );
+        layout2col.add_column( { "header_widget", "summary_widget", "gallery_widget", "actions_widget" } );
+    } else if (resultType == "characters") {
+        layout2col.add_column( { "image_widget" } );
+        layout2col.add_column( { "header_widget", "summary_widget", "actions_widget" } );
+    }
 
     // Three column layout
-    layout3col.add_column( { "image_widget" });
-    layout3col.add_column( { "header_widget", "summary_widget" } );
-    layout3col.add_column( { "actions_widget" } );
+    if (resultType == "comics") {
+        layout3col.add_column( { "image_widget" });
+        layout3col.add_column( { "header_widget", "summary_widget", "gallery_widget" } );
+        layout3col.add_column( { "actions_widget" } );
+    } else if (resultType == "characters") {
+        layout3col.add_column( { "image_widget" });
+        layout3col.add_column( { "header_widget", "summary_widget" } );
+        layout3col.add_column( { "actions_widget" } );
+    }
 
     // Register the layouts we just created
     reply->register_layout( { layout1col, layout2col, layout3col } );
@@ -84,6 +99,8 @@ void Preview::run(sc::PreviewReplyProxy const& reply) {
     }
 
     if (resultType == "characters") {
+        // Character preview
+        // Buttons only for character preview
         // Wiki action
         if (result["wiki"].get_string() != "") {
             builder.add_tuple({
@@ -105,10 +122,28 @@ void Preview::run(sc::PreviewReplyProxy const& reply) {
         }
     }
 
-
     actions.add_attribute_value("actions", builder.end());
 
+    // Define gallery section
+    sc::PreviewWidget gallery("gallery_widget", "gallery");
+    sc::VariantArray arr;
+
+    if (resultType == "comics") {
+        // Comic preview
+        arr.push_back(sc::Variant("http://i.annihil.us/u/prod/marvel/i/mg/6/70/55cca22294d68.jpg"));
+        arr.push_back(sc::Variant("http://i.annihil.us/u/prod/marvel/i/mg/e/c0/4bc36bbd11d9b.jpg"));
+        gallery.add_attribute_value("sources", sc::Variant(arr));
+        //gallery.add_attribute_value("fallback", Variant("file:///tmp/fallback.png"));
+
+    }
+
     // Push each of the sections
-    reply->push( { image, header, summary, actions } );
+    if (resultType == "comics") {
+        reply->push( { image, header, summary, gallery, actions } );
+    } else if (resultType == "characters") {
+        reply->push( { image, header, summary, actions } );
+    }
+
+
 }
 
