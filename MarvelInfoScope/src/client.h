@@ -63,6 +63,7 @@ public:
         std::string description;
         std::string thumbnail;
         std::string detailUrl;
+        std::string images;
     };
 
     /**

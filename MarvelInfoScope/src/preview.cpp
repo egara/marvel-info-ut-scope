@@ -130,8 +130,18 @@ void Preview::run(sc::PreviewReplyProxy const& reply) {
 
     if (resultType == "comics") {
         // Comic preview
-        arr.push_back(sc::Variant("http://i.annihil.us/u/prod/marvel/i/mg/6/70/55cca22294d68.jpg"));
-        arr.push_back(sc::Variant("http://i.annihil.us/u/prod/marvel/i/mg/e/c0/4bc36bbd11d9b.jpg"));
+        std::string s = result["images"].get_string();
+        std::string delimiter = ";";
+
+        size_t pos = 0;
+        std::string token;
+        while ((pos = s.find(delimiter)) != std::string::npos) {
+            token = s.substr(0, pos);
+            arr.push_back(sc::Variant(token));
+            s.erase(0, pos + delimiter.length());
+
+        }
+        arr.push_back(sc::Variant(s));
         gallery.add_attribute_value("sources", sc::Variant(arr));
         //gallery.add_attribute_value("fallback", Variant("file:///tmp/fallback.png"));
 

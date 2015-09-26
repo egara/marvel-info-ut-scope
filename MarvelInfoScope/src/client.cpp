@@ -207,15 +207,15 @@ Client::Comics Client::query_comics(const string& query, bool allComics, std::st
                 detailUrl = url["url"].toString().toStdString();
             }
 
-            // Wiki URL
-            //if (type == "wiki") {
-            //    wikiUrl = url["url"].toString().toStdString();
-            //}
+        }
 
-            // Comiclink URL
-            //if (type == "comiclink") {
-            //    comicUrl = url["url"].toString().toStdString();
-            //}
+        // Images
+        std::string images = "";
+        for (const QVariant &imageVariant : item["images"].toList()) {
+
+            QVariantMap image = imageVariant.toMap();
+            images = images + image["path"].toString().toStdString() + "." + image["extension"].toString().toStdString() + ";";
+
         }
 
         // Add a result to the comic list
@@ -225,7 +225,8 @@ Client::Comics Client::query_comics(const string& query, bool allComics, std::st
                             item["title"].toString().toStdString(),
                             item["description"].toString().toStdString(),
                             completeURLThumbnail,
-                            detailUrl
+                            detailUrl,
+                            images.substr(0, images.size()-1) // Removing last ; character
                             //wikiUrl,
                             //comicUrl
                     });

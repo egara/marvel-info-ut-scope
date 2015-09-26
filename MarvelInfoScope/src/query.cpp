@@ -233,6 +233,7 @@ void Query::run(sc::SearchReplyProxy const& reply) {
                 }
                 res["marvelAttribution"] = "Data provided by Marvel. © 2014 Marvel";   // Marvel attribution
                 res["resultType"] = filterid;
+                res["images"] = comic.images;
 
                 // Push the result
                 if (!reply->push(res)) {
