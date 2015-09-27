@@ -218,6 +218,16 @@ Client::Comics Client::query_comics(const string& query, bool allComics, std::st
 
         }
 
+        // Characters
+        QVariantMap chars = item["characters"].toMap();
+        std::string characters = "";
+        // Iterate through the charaters items
+        for (const QVariant &j : chars["items"].toList()) {
+            QVariantMap character = j.toMap();
+            characters = characters + character["name"].toString().toStdString() + ";";
+        }
+
+
         // Add a result to the comic list
         result.comic.emplace_back(
                     Comic {
@@ -229,7 +239,8 @@ Client::Comics Client::query_comics(const string& query, bool allComics, std::st
                             item["description"].toString().toStdString(),
                             completeURLThumbnail,
                             detailUrl,
-                            images.substr(0, images.size()-1) // Removing last ; character
+                            images.substr(0, images.size()-1), // Removing last ;
+                            characters.substr(0, images.size()-1) // Removing last ;
                     });
 
 

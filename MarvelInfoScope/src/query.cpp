@@ -217,15 +217,19 @@ void Query::run(sc::SearchReplyProxy const& reply) {
 
                 // Set URLs
                 res.set_uri(comic.detailUrl);
-                //res["wiki"] = comic.wikiUrl; // wiki must not be defined within CHARACTER_TEMPLATE
-                                                 // but it will be available in preview.cpp
-                //res["comiclink"] = comic.comicUrl;  // comiclink must not be defined within CHARACTER_TEMPLATE
-                                                        // but it will be available in preview.cpp
 
                 // Set the rest of the attributes
                 res["title"] = comic.title;
                 res.set_art(comic.thumbnail);
                 res["subtitle"] = comic.format;
+                res["format"] = comic.format;
+                res["pageCount"] = comic.pageCount;
+                if (comic.isbn == "") {
+                    res["isbn"] = "No ISBN found";
+                } else {
+                    res["isbn"] = comic.isbn;
+                }
+                res["isbn"] = comic.isbn;
                 if (comic.description == "") {
                     res["description"] = "No description found.";
                 } else {
@@ -234,6 +238,7 @@ void Query::run(sc::SearchReplyProxy const& reply) {
                 res["marvelAttribution"] = "Data provided by Marvel. © 2014 Marvel";   // Marvel attribution
                 res["resultType"] = filterid;
                 res["images"] = comic.images;
+                res["characters"] = comic.characters;
 
                 // Push the result
                 if (!reply->push(res)) {

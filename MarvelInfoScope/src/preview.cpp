@@ -124,12 +124,19 @@ void Preview::run(sc::PreviewReplyProxy const& reply) {
 
     actions.add_attribute_value("actions", builder.end());
 
+    // Defines expandable section with more information for comics
+    sc::PreviewWidget expandable("expandable_widget", "expandable");
+    sc::PreviewWidget format("format", "text");
+    sc::PreviewWidget pageCount("pageCount", "text");
+    sc::PreviewWidget isbn("isbn", "text");
+    sc::PreviewWidget characters("characters", "text");
+
     // Define gallery section
     sc::PreviewWidget gallery("gallery_widget", "gallery");
     sc::VariantArray arr;
 
     if (resultType == "comics") {
-        // Comic preview
+        // Comic gallery
         std::string s = result["images"].get_string();
         std::string delimiter = ";";
 
@@ -145,20 +152,23 @@ void Preview::run(sc::PreviewReplyProxy const& reply) {
         gallery.add_attribute_value("sources", sc::Variant(arr));
         //gallery.add_attribute_value("fallback", Variant("file:///tmp/fallback.png"));
 
-    }
+        // Comic additional info
+        expandable.add_attribute_value("title", sc::Variant("Additional Information"));
+        expandable.add_attribute_value("collapsed-widgets", sc::Variant(0));
+        format.add_attribute_value("title", sc::Variant("Format"));
+        format.add_attribute_value("text", sc::Variant(result["format"].get_string()));
+        pageCount.add_attribute_value("title", sc::Variant("Number of pages"));
+        pageCount.add_attribute_value("text", sc::Variant(result["pageCount"].get_string()));
+        isbn.add_attribute_value("title", sc::Variant("ISBN"));
+        isbn.add_attribute_value("text", sc::Variant(result["isbn"].get_string()));
+        characters.add_attribute_value("title", sc::Variant("Characters"));
+        characters.add_attribute_value("text", sc::Variant(result["characters"].get_string()));
+        expandable.add_widget(format);
+        expandable.add_widget(pageCount);
+        expandable.add_widget(isbn);
+        expandable.add_widget(characters);
 
-    // Defines expandable section with more information for comics
-    sc::PreviewWidget expandable("expandable_widget", "expandable");
-    expandable.add_attribute_value("title", sc::Variant("Additional Information"));
-    expandable.add_attribute_value("collapsed-widgets", sc::Variant(0));
-    sc::PreviewWidget w1("w1", "text");
-    w1.add_attribute_value("title", sc::Variant("Subwidget 1"));
-    w1.add_attribute_value("text", sc::Variant("A text"));
-    sc::PreviewWidget w2("w2", "text");
-    w2.add_attribute_value("title", sc::Variant("Subwidget 2"));
-    w2.add_attribute_value("text", sc::Variant("A text"));
-    expandable.add_widget(w1);
-    expandable.add_widget(w2);
+    }
 
     // Push each of the sections
     if (resultType == "comics") {
