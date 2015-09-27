@@ -222,13 +222,10 @@ void Query::run(sc::SearchReplyProxy const& reply) {
                 res["title"] = comic.title;
                 res.set_art(comic.thumbnail);
                 res["subtitle"] = comic.format;
+                res["reader"] = comic.readerUrl;  // reader must not be defined within COMIC_TEMPLATE
+                                                     // but it will be available in preview.cpp
                 res["format"] = comic.format;
                 res["pageCount"] = comic.pageCount;
-                if (comic.isbn == "") {
-                    res["isbn"] = "No ISBN found";
-                } else {
-                    res["isbn"] = comic.isbn;
-                }
                 res["isbn"] = comic.isbn;
                 if (comic.description == "") {
                     res["description"] = "No description found.";
@@ -239,6 +236,7 @@ void Query::run(sc::SearchReplyProxy const& reply) {
                 res["resultType"] = filterid;
                 res["images"] = comic.images;
                 res["characters"] = comic.characters;
+                res["creators"] = comic.creators;
 
                 // Push the result
                 if (!reply->push(res)) {

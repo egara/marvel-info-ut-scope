@@ -195,7 +195,7 @@ Client::Comics Client::query_comics(const string& query, bool allComics, std::st
 
         // Important URLs
         std::string detailUrl = "";
-        //std::string wikiUrl = "";
+        std::string readerUrl = "";
         //std::string comicUrl = "";
         for (const QVariant &urlVariant : item["urls"].toList()) {
 
@@ -205,8 +205,16 @@ Client::Comics Client::query_comics(const string& query, bool allComics, std::st
             // Detail URL
             if (type == "detail") {
                 detailUrl = url["url"].toString().toStdString();
+            } else if (type == "reader") {
+                readerUrl = url["url"].toString().toStdString();
             }
 
+        }
+
+        // ISBN
+        std::string isbn = "No ISBN found.";
+        if (item["isbn"].toString().toStdString() != "") {
+            isbn = item["isbn"].toString().toStdString();
         }
 
         // Images
@@ -226,7 +234,21 @@ Client::Comics Client::query_comics(const string& query, bool allComics, std::st
             QVariantMap character = j.toMap();
             characters = characters + character["name"].toString().toStdString() + ";";
         }
+        if (characters == "") {
+            characters = "No characters found.";
+        }
 
+        // Creators
+        QVariantMap crea = item["creators"].toMap();
+        std::string creators = "";
+        // Iterate through the charaters items
+        for (const QVariant &k : crea["items"].toList()) {
+            QVariantMap creator = k.toMap();
+            creators = creators + creator["name"].toString().toStdString() + "(" + creator["role"].toString().toStdString() + ")" + ";";
+        }
+        if (creators == "") {
+            creators = "No creators found.";
+        }
 
         // Add a result to the comic list
         result.comic.emplace_back(
@@ -234,13 +256,15 @@ Client::Comics Client::query_comics(const string& query, bool allComics, std::st
                             item["id"].toString().toStdString(),
                             item["format"].toString().toStdString(),
                             item["pageCount"].toString().toStdString(),
-                            item["isbn"].toString().toStdString(),
+                            isbn,
                             item["title"].toString().toStdString(),
                             item["description"].toString().toStdString(),
                             completeURLThumbnail,
                             detailUrl,
+                            readerUrl,
                             images.substr(0, images.size()-1), // Removing last ;
-                            characters.substr(0, images.size()-1) // Removing last ;
+                            characters.substr(0, characters.size()-1), // Removing last ;
+                            creators.substr(0, creators.size()-1) // Removing last ;
                     });
 
 

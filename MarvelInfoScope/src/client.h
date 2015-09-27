@@ -66,8 +66,10 @@ public:
         std::string description;
         std::string thumbnail;
         std::string detailUrl;
+        std::string readerUrl;
         std::string images;
         std::string characters;
+        std::string creators;
     };
 
     /**

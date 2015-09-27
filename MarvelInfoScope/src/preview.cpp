@@ -120,6 +120,18 @@ void Preview::run(sc::PreviewReplyProxy const& reply) {
             });
 
         }
+    } else if (resultType == "comics") {
+        // Comic preview
+        // Buttons only for comic preview
+        // Reader action
+        if (result["reader"].get_string() != "") {
+            builder.add_tuple({
+                {"id", sc::Variant("open")},
+                {"label", sc::Variant("Reader")},
+                {"uri", sc::Variant(result["reader"].get_string())}
+            });
+
+        }
     }
 
     actions.add_attribute_value("actions", builder.end());
@@ -130,6 +142,7 @@ void Preview::run(sc::PreviewReplyProxy const& reply) {
     sc::PreviewWidget pageCount("pageCount", "text");
     sc::PreviewWidget isbn("isbn", "text");
     sc::PreviewWidget characters("characters", "text");
+    sc::PreviewWidget creators("creators", "text");
 
     // Define gallery section
     sc::PreviewWidget gallery("gallery_widget", "gallery");
@@ -163,10 +176,13 @@ void Preview::run(sc::PreviewReplyProxy const& reply) {
         isbn.add_attribute_value("text", sc::Variant(result["isbn"].get_string()));
         characters.add_attribute_value("title", sc::Variant("Characters"));
         characters.add_attribute_value("text", sc::Variant(result["characters"].get_string()));
+        creators.add_attribute_value("title", sc::Variant("Creators"));
+        creators.add_attribute_value("text", sc::Variant(result["creators"].get_string()));
         expandable.add_widget(format);
         expandable.add_widget(pageCount);
         expandable.add_widget(isbn);
         expandable.add_widget(characters);
+        expandable.add_widget(creators);
 
     }
 
