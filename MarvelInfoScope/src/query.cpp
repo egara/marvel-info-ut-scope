@@ -225,7 +225,7 @@ void Query::run(sc::SearchReplyProxy const& reply) {
                 // Set the rest of the attributes
                 res["title"] = comic.title;
                 res.set_art(comic.thumbnail);
-                res["subtitle"] = "isbn: ";
+                res["subtitle"] = comic.format;
                 if (comic.description == "") {
                     res["description"] = "No description found.";
                 } else {

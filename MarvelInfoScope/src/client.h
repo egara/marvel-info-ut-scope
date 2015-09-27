@@ -59,6 +59,9 @@ public:
      */
     struct Comic {
         std::string id;
+        std::string format;
+        std::string pageCount;
+        std::string isbn;
         std::string title;
         std::string description;
         std::string thumbnail;

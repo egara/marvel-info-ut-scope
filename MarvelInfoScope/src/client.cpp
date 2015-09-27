@@ -222,13 +222,14 @@ Client::Comics Client::query_comics(const string& query, bool allComics, std::st
         result.comic.emplace_back(
                     Comic {
                             item["id"].toString().toStdString(),
+                            item["format"].toString().toStdString(),
+                            item["pageCount"].toString().toStdString(),
+                            item["isbn"].toString().toStdString(),
                             item["title"].toString().toStdString(),
                             item["description"].toString().toStdString(),
                             completeURLThumbnail,
                             detailUrl,
                             images.substr(0, images.size()-1) // Removing last ; character
-                            //wikiUrl,
-                            //comicUrl
                     });
 
 

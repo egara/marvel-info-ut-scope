@@ -39,7 +39,7 @@ void Preview::run(sc::PreviewReplyProxy const& reply) {
 
     // Single column layout
     if (resultType == "comics") {
-        layout1col.add_column( { "image_widget", "header_widget", "summary_widget", "gallery_widget", "actions_widget" } );
+        layout1col.add_column( { "image_widget", "header_widget", "summary_widget", "expandable_widget", "gallery_widget", "actions_widget" } );
     } else if (resultType == "characters") {
         layout1col.add_column( { "image_widget", "header_widget", "summary_widget", "actions_widget" } );
     }
@@ -47,7 +47,7 @@ void Preview::run(sc::PreviewReplyProxy const& reply) {
     // Two column layout
     if (resultType == "comics") {
         layout2col.add_column( { "image_widget" } );
-        layout2col.add_column( { "header_widget", "summary_widget", "gallery_widget", "actions_widget" } );
+        layout2col.add_column( { "header_widget", "summary_widget", "expandable_widget", "gallery_widget", "actions_widget" } );
     } else if (resultType == "characters") {
         layout2col.add_column( { "image_widget" } );
         layout2col.add_column( { "header_widget", "summary_widget", "actions_widget" } );
@@ -56,7 +56,7 @@ void Preview::run(sc::PreviewReplyProxy const& reply) {
     // Three column layout
     if (resultType == "comics") {
         layout3col.add_column( { "image_widget" });
-        layout3col.add_column( { "header_widget", "summary_widget", "gallery_widget" } );
+        layout3col.add_column( { "header_widget", "summary_widget", "expandable_widget", "gallery_widget" } );
         layout3col.add_column( { "actions_widget" } );
     } else if (resultType == "characters") {
         layout3col.add_column( { "image_widget" });
@@ -147,9 +147,22 @@ void Preview::run(sc::PreviewReplyProxy const& reply) {
 
     }
 
+    // Defines expandable section with more information for comics
+    sc::PreviewWidget expandable("expandable_widget", "expandable");
+    expandable.add_attribute_value("title", sc::Variant("Additional Information"));
+    expandable.add_attribute_value("collapsed-widgets", sc::Variant(0));
+    sc::PreviewWidget w1("w1", "text");
+    w1.add_attribute_value("title", sc::Variant("Subwidget 1"));
+    w1.add_attribute_value("text", sc::Variant("A text"));
+    sc::PreviewWidget w2("w2", "text");
+    w2.add_attribute_value("title", sc::Variant("Subwidget 2"));
+    w2.add_attribute_value("text", sc::Variant("A text"));
+    expandable.add_widget(w1);
+    expandable.add_widget(w2);
+
     // Push each of the sections
     if (resultType == "comics") {
-        reply->push( { image, header, summary, gallery, actions } );
+        reply->push( { image, header, summary, expandable, gallery, actions } );
     } else if (resultType == "characters") {
         reply->push( { image, header, summary, actions } );
     }
